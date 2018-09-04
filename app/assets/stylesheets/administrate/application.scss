@@ -1,10 +1,12 @@
 @font-face {
 	font-display: fallback;
 }
-@charset "utf-8";
+// @charset "utf-8";
 
 $font_path:   '../';
 @import "../config/fonts";
+
+@import "material_icons";
 
 @import "rst/normalize";
 
@@ -17,8 +19,6 @@ $secondary-color: #4D5354;// #2A3132;
 $success-color: #6AB187;
 $error-color: #f48468;
 $link-color: #004890;
-
-@import "material_icons";
 // @import "materialize";
 
 // @import "selectize";
@@ -45,6 +45,7 @@ $link-color: #004890;
 @import "comp/navigation";
 @import "comp/pagination";
 @import "comp/search";
+@import "comp/fab-button";
 
 @import "util/text-color";
 

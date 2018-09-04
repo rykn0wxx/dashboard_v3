@@ -14,7 +14,7 @@ class UserDashboard < ApplicationDashboard
     encrypted_password: Field::String,
     admin: Field::Boolean,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime.with_options(:format => '%Y-%b-%d %R'),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,7 +26,7 @@ class UserDashboard < ApplicationDashboard
     :id,
     :email,
     :username,
-    :encrypted_password,
+    :updated_at,
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys - READ_ONLY_ATTRIBUTES
