@@ -66,6 +66,19 @@
 		}
 	}
 
+	Mudhead.formInput = function () {
+		selector: '.fld-input',
+		parent: '.fld-grp',
+		toggleClass: 'fld-grp--focused',
+		activate: function () {
+			var o = this;
+			var baseElem = o.parent + ' ' + o.selector;
+			$(baseElem).on('focus blur', function (i) {
+				$(this).parents(o.parent).toggleClass(o.toggleClass, 'focus' === i.type || this.value.length > 0);
+			});
+		}
+	};
+
 	Mudhead.init = function () {
 		var o = this;
 		o.sidebar.activate();
@@ -76,6 +89,7 @@
 				$(this.el).blur();
 			}
 		});
+		o.formInput.activate();
 		console.log('run');
 	};
 
