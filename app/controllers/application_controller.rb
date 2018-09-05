@@ -25,5 +25,5 @@ class ApplicationController < ActionController::Base
 	  else
 	  	devise_controller? ? 'authentication' : 'application'
 	  end
-	end	
+	end
 end

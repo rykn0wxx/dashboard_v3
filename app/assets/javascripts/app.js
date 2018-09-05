@@ -66,7 +66,7 @@
 		}
 	}
 
-	Mudhead.formInput = function () {
+	Mudhead.formInput = {
 		selector: '.fld-input',
 		parent: '.fld-grp',
 		toggleClass: 'fld-grp--focused',
@@ -90,6 +90,9 @@
 			}
 		});
 		o.formInput.activate();
+
+		if ($('aside.main-sidebar .sidenav').length > 0) $('aside.main-sidebar .sidenav').sidenav();		
+
 		console.log('run');
 	};
 

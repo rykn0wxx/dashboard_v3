@@ -3,5 +3,6 @@ class Main::PageController < ApplicationController
   end
 
   def theme
+		render layout: 'theme'
   end
 end

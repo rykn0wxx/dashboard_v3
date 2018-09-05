@@ -1,21 +1,22 @@
 module Admin
   class DimRegionsController < Admin::ApplicationController
-    # To customize the behavior of this controller,
-    # you can overwrite any of the RESTful actions. For example:
-    #
-    # def index
-    #   super
-    #   @resources = DimRegion.
-    #     page(params[:page]).
-    #     per(10)
-    # end
+		before_action :set_local, :only => [:import, :do_import]
 
-    # Define a custom finder by overriding the `find_resource` method:
-    # def find_resource(param)
-    #   DimRegion.find_by!(slug: param)
-    # end
+    def import
+			render locals: {
+        adm_imp: @adm_imp,
+        page: @page,
+        resources: @resources
+      }
+    end
 
-    # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
-    # for more information
+		private
+
+		def set_local
+		  @adm_imp = AdminImport.new
+			@adm_imp.objname = 'dim_region'
+			@page = Administrate::Page::Form.new(dashboard, resource_class.new)
+			@resources = scoped_resource.includes(*dashboard.association_includes) if dashboard.association_includes.any?
+		end
   end
 end
