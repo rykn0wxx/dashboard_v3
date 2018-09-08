@@ -88,10 +88,12 @@ a {
 	text-decoration: none;
 	color: $link-color;
 	transition: color 0.2s ease;
-	&:hover, &:active, &:focus {
-		color: mix(#ffffff, $link-color, 30%);
-		outline: none;
-		text-decoration: none;
+	&:not([class]) {
+		&:hover, &:active, &:focus {
+			color: mix(#ffffff, $link-color, 30%);
+			outline: none;
+			text-decoration: none;
+		}
 	}
 }
 

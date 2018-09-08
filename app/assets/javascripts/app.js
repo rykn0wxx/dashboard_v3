@@ -66,7 +66,7 @@
 		}
 	}
 
-	Mudhead.formInput = function () {
+	Mudhead.formInput = {
 		selector: '.fld-input',
 		parent: '.fld-grp',
 		toggleClass: 'fld-grp--focused',

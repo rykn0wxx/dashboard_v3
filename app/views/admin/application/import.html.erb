@@ -1,0 +1,42 @@
+<% content_for(:title) do %>
+  <%= display_resource_name(page.resource_name) %>
+<% end %>
+
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title">
+    Bulk Upload
+  </h1>
+
+	<div>
+		<%= link_to :back, :class => "md-button md-fab md-mini md-button-wisteria" do %>
+		  <i class="material-icons">arrow_back_ios</i>
+		<% end %>
+	</div>
+</header>
+
+<section class="main-content__body">
+
+	<div class="bmd-card">
+		<div class="bmd-card-header">
+			<h4 class="bmd-card-title">
+				<%= content_for(:title) %>
+			</h4>
+			<p class="bmd-card-subtitle">
+				A CSV file can be used to import records. The first row should be the column name. The following columns are allowed.
+			</p>
+		</div>
+		<div class="bmd-card-body">
+			<dl>
+				<% page.attribute_types.each do |attr_name, attr_type| %>
+					<dt class="attribute-label">
+						<%= attr_name %>
+					</dt>
+					<dd class="attribute-data"><%= attr_type.field_type.to_s.titleize %></dd>
+			  <% end %>
+			</dl>
+		</div>
+	</div>
+
+
+
+</section>

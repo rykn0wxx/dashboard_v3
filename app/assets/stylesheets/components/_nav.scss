@@ -1,0 +1,23 @@
+.main-header {
+	nav {
+		.sidenav-trigger, .brand-logo, ul a {
+			position: relative;
+			.nav-indicator {
+				background: #fff;
+				bottom: 0;
+				height: 4px;
+				left: 0;
+				position: absolute;
+				right: 0;
+				transform: scaleY(0);
+				transform-origin: bottom;
+				transition: transform 235ms cubic-bezier(.4,0,.2,1);
+			}
+			&:hover {
+				.nav-indicator {
+					transform: scaleY(1);
+				}
+			}
+		}
+	}
+}

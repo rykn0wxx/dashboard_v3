@@ -142,6 +142,10 @@ button.md-button::-moz-focus-inner {
       line-height: $button-fab-mini-line-height;
       width: $button-fab-mini-width;
       height: $button-fab-mini-height;
+			> i {
+				line-height: $button-fab-mini-line-height;
+				height: $button-fab-mini-height;
+			}
     }
 		> i {
 			width: auto;

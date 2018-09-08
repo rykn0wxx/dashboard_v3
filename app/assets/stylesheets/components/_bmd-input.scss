@@ -106,7 +106,7 @@ input, textarea {
 
 .fld-rpl-line {
 	order: 3;
-	background-color: $primary;
+	background-color: $primary-color;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -124,7 +124,7 @@ input, textarea {
 	}
 	.fld-label {
 		transform: translate3d(-6px,10px,0) scale(0.75);
-		color: rgba($primary, 0.87);
+		color: rgba($primary-color, 0.87);
 		transition: transform .4s cubic-bezier(.25,.8,.25,1),width .4s cubic-bezier(.25,.8,.25,1);
 	}
 	.fld-rpl-line {

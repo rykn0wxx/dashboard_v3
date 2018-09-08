@@ -26,6 +26,11 @@
       class: "button",
     ) if valid_action?(:new) && show_action?(:new, new_resource) %>
   </div>
+	<div>
+		<%= link_to [:import, namespace, page.resource_path.pluralize], :class => "md-button md-fab md-mini" do %>
+		  <i class="material-icons">cloud_upload</i>
+		<% end %>
+	</div>
 </header>
 
 <section class="main-content__body main-content__body--flush">

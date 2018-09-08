@@ -1,21 +1,20 @@
 module Admin
   class DimProjectsController < Admin::ApplicationController
-    # To customize the behavior of this controller,
-    # you can overwrite any of the RESTful actions. For example:
-    #
-    # def index
-    #   super
-    #   @resources = DimProject.
-    #     page(params[:page]).
-    #     per(10)
-    # end
+		before_action :set_local, :only => [:import, :do_import]
 
-    # Define a custom finder by overriding the `find_resource` method:
-    # def find_resource(param)
-    #   DimProject.find_by!(slug: param)
-    # end
+		def import
+		  render locals: {
+				page: @page,
+				resources: @resources
+			}
+		end
 
-    # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
-    # for more information
+		private
+		def set_local
+			resource_includes = dashboard.association_includes
+			@model_name = 'dim_project'
+			@page = Administrate::Page::Collection.new(dashboard, order: order)
+			@resources = scoped_resource.includes(*resource_includes) if resource_includes.any?
+		end
   end
 end
