@@ -79,17 +79,38 @@
 		}
 	};
 
+	Mudhead.csvUploader = {
+		parent_form_class: '.admin-form',
+		input_file_id: 'adm_file',
+		show_input_file: 'adm_file_path',
+		submit_btn_selector: '.actions button.md-button',
+		activate: function () {
+			var o = this;
+			$('body ' + o.parent_form_class).on('change', '#' + o.input_file_id, function (ev) {
+				var inp = $(this);
+				var lbl = inp.val().replace(/\\/g, '/').replace(/.*\//, '');
+				$(o.parent_form_class).find('#' + o.show_input_file).val(lbl);
+				$(o.parent_form_class).find(o.submit_btn_selector).removeAttr('disabled');
+			});
+		}
+	};
+
 	Mudhead.init = function () {
 		var o = this;
-		o.sidebar.activate();
-		o.flash.activate();
-		M.updateTextFields();
-		$('.dropdown-trigger').dropdown({
-			onCloseEnd: function () {
-				$(this.el).blur();
-			}
-		});
-		o.formInput.activate();
+		if ($('body').hasClass('administrate')) {
+			o.csvUploader.activate();
+		} else {
+			o.sidebar.activate();
+			o.flash.activate();
+			M.updateTextFields();
+			M.AutoInit();
+			// $('.dropdown-trigger').dropdown({
+			// 	onCloseEnd: function () {
+			// 		$(this.el).blur();
+			// 	}
+			// });
+			o.formInput.activate();
+		}
 		console.log('run');
 	};
 

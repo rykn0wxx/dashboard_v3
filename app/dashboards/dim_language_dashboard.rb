@@ -41,7 +41,7 @@ class DimLanguageDashboard < ApplicationDashboard
   # Overwrite this method to customize how dim languages are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(dim_language)
-  #   "DimLanguage ##{dim_language.id}"
-  # end
+  def display_resource(dim_language)
+    "#{dim_language.language_name}"
+  end
 end

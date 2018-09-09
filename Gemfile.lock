@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/jkowens/activerecord-import.git
+  revision: b6744e9dab3465c07afda2f29acd835617f45b49
+  branch: sqlite_upsert
+  specs:
+    activerecord-import (0.25.0)
+      activerecord (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -216,6 +224,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import!
   administrate
   annotate
   bcrypt (~> 3.1.7)

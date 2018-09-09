@@ -43,7 +43,7 @@ class DimSiteDashboard < ApplicationDashboard
   # Overwrite this method to customize how dim sites are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(dim_site)
-  #   "DimSite ##{dim_site.id}"
-  # end
+  def display_resource(dim_site)
+    "#{dim_site.site_name}"
+  end
 end

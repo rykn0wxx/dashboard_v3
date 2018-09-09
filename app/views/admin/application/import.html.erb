@@ -26,14 +26,19 @@
 			</p>
 		</div>
 		<div class="bmd-card-body">
-			<dl>
-				<% page.attribute_types.each do |attr_name, attr_type| %>
-					<dt class="attribute-label">
-						<%= attr_name %>
-					</dt>
-					<dd class="attribute-data"><%= attr_type.field_type.to_s.titleize %></dd>
-			  <% end %>
-			</dl>
+			<div class="bmd-card-content">
+				<dl>
+					<% page.attribute_types.each do |attr_name, attr_type| %>
+						<dt class="attribute-label">
+							<%= attr_name %>
+						</dt>
+						<dd class="attribute-data"><%= attr_type.field_type.to_s.titleize %></dd>
+					<% end %>
+				</dl>
+			</div>
+			<div class="bmd-card-content">
+				<%= render("file_admin_upload", page: page) %>
+			</div>
 		</div>
 	</div>
 

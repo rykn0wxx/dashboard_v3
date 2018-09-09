@@ -38,7 +38,7 @@ class DimProjectDashboard < ApplicationDashboard
   # Overwrite this method to customize how dim projects are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(dim_project)
-  #   "DimProject ##{dim_project.id}"
-  # end
+  def display_resource(dim_project)
+    "#{dim_project.name}"
+  end
 end

@@ -35,12 +35,13 @@ class DimRegionDashboard < ApplicationDashboard
   FORM_ATTRIBUTES = [
     :region_name,
     :region_code,
+		:dim_sites
   ].freeze
 
   # Overwrite this method to customize how dim regions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(dim_region)
-  #   "DimRegion ##{dim_region.id}"
-  # end
+  def display_resource(dim_region)
+    "#{dim_region.region_name}"
+  end
 end

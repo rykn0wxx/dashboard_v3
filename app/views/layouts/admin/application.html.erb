@@ -8,7 +8,9 @@
 		<title>
 			<%= content_for?(:title) ? yield(:title) + " | rykn0wxx" : "rykn0wxx" %>
 		</title>
-		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="icon" type="image/png" sizes="16x16" href="<%= image_path('favicon-16x16.png') %>" />
+		<link rel="icon" type="image/png" sizes="32x32" href="<%= image_path('favicon-32x32.png') %>" />
+		<link rel="icon" type="image/png" sizes="96x96" href="<%= image_path('favicon-96x96.png') %>" />
 		<script type="text/javascript">
 			document.documentElement.className = "rykn0wxx js";
 		</script>
@@ -19,9 +21,10 @@
     <%= csp_meta_tag %>
 
 		<%= render "stylesheet" %>
+
   </head>
 
-  <body class="">
+  <body class="administrate">
 
 		<%= render "icons" %>
 
@@ -42,6 +45,7 @@
 			</main>
 
 		</div>
-
+		<%= render "javascript" %>
+		<%= render "shared/scripts_js" %>
   </body>
 </html>

@@ -1,0 +1,18 @@
+<%= form_tag url_for(:only_path => true, :action => "do_import"), :multipart => true, :novalidate => true, :class => "admin-form" do |f| %>
+	<%= hidden_field_tag :objname, page.resource_name %>
+
+	<div class="file-field">
+    <div class="btn">
+      <span>Choose file</span>
+      <input type="file" name="file" id="adm_file" accept=".csv" />
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" id="adm_file_path" type="text" placeholder="Upload your file" disabled />
+    </div>
+  </div>
+	<div class="actions">
+		<%= button_tag(:type => "submit", :class => "md-button", :disabled => true) do %>
+			Submit
+		<% end %>
+	</div>
+<% end %>
